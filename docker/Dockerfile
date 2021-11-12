@@ -131,6 +131,9 @@ RUN chmod 644 JAFFA/tools.groovy
 COPY convert_jaffa_to_bedpe.py /usr/local/bin/convert_jaffa_to_bedpe.py
 RUN chmod 755 /usr/local/bin/convert_jaffa_to_bedpe.py
 
+RUN cd / && wget https://figshare.com/ndownloader/files/25410494
+RUN gunzip JAFFA_REFERENCE_FILES_HG38_GENCODE22.V2.tar.gz
+
 WORKDIR /data/batch
 
 CMD ["bpipe", "run", "-p", "fastqInputFormat='%_*.fastq.gz'", "-p", "refBase=/data/reference", "-p", "genome=hg38", "-p", "annotation=genCode22", "/opt/JAFFA/JAFFA_direct.groovy", "/data/example/BT474-demo_1.fastq.gz", "/data/example/BT474-demo_2.fastq.gz"]
