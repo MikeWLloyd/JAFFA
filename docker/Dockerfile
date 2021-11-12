@@ -125,7 +125,6 @@ RUN g++ -std=c++11 -O3 -o JAFFA/tools/bin/make_simple_read_table JAFFA/src/make_
 ENV PATH ${PATH}:/opt/JAFFA/tools/bin
 
 # set the tools
-COPY tools.groovy JAFFA/tools.groovy
 RUN chmod 644 JAFFA/tools.groovy
 
 COPY convert_jaffa_to_bedpe.py /usr/local/bin/convert_jaffa_to_bedpe.py
