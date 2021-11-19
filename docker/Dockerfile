@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM quay.io/jitesoft/ubuntu:18.04
 
 MAINTAINER Rebecca Louise Evans (rebecca.louise.evans@gmail.com)
 
