@@ -116,7 +116,7 @@ RUN find /opt/bpipe/bin -type f -exec ln -s '{}' /usr/local/bin/ \;
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R")' -e 'biocLite("IRanges")'
 
 # install jaffa
-RUN git clone https://github.com/Oshlack/JAFFA.git -b master
+RUN git clone https://github.com/MikeWLloyd/JAFFA.git -b master
 RUN mkdir -p JAFFA/tools/bin
 RUN g++ -std=c++11 -O3 -o JAFFA/tools/bin/process_transcriptome_align_table JAFFA/src/process_transcriptome_align_table.c++
 RUN g++ -O3 -o JAFFA/tools/bin/extract_seq_from_fasta JAFFA/src/extract_seq_from_fasta.c++
